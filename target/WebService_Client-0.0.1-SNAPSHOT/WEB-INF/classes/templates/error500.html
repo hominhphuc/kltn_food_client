@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server đang bảo trì</title>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center height-vh">
+
+        <div class="col-lg-6 col-12">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                <h1 class="main-heading">500</h1>
+                <h2>Ôi, xin lỗi quý khách!</h2>
+                <h5>Đang dọn dẹp cửa tiệm, xin thử lại sau</h5>
+            </div>
+
+            <div class="countdown text-center" style="font-size: 50px"></div>
+
+            <div class="text-center mt-4 mb-5">
+                <a href="/" class="btn btn-success px-3 mr-2"><i class="fa fa-home"></i> Về trang chính</a>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <img src="https://github.com/N52-47-KLTN-Tan-Toan/FastFood_CLIENT/blob/master/cleaner.png?raw=true"
+                 alt="LOGO" width="100%">
+        </div>
+
+    </div>
+</div>
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script>
+    $(function () {
+        setTimeout(function () {
+            window.location.reload()
+        }, 5000)
+    })
+</script>
+<!--===============================================================================================-->
+<script>
+    var timer2 = '5:06'
+    var interval = setInterval(function() {
+        var timer = timer2.split(':')
+        //by parsing integer, I avoid all extra string processing
+        var minutes = parseInt(timer[0], 10)
+        var seconds = parseInt(timer[1], 10)
+        --seconds;
+        minutes = (seconds < 0) ? --minutes : minutes
+        if (minutes < 0) clearInterval(interval)
+        seconds = (seconds < 0) ? 59 : seconds
+        seconds = (seconds < 10) ? '0' + seconds : seconds
+        //minutes = (minutes < 10) ?  minutes : minutes
+        $('.countdown').html(seconds)
+        timer2 = minutes + ':' + seconds
+    }, 1100)
+</script>
+</body>
+</html>

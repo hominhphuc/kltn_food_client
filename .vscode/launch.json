@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-WebServiceClientApplication<WebService_Client>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "dev.webservice_client.WebServiceClientApplication",
+            "projectName": "WebService_Client",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- Cart -->
+<div class="wrap-header-cart js-panel-cart" th:fragment="fm-cart">
+    <div class="s-full js-hide-cart"></div>
+
+    <!-- Modal đặt hàng thành công -->
+    <div class="modal fade p-t-200" id="reqSuccessful" tabindex="-1" role="dialog" aria-labelledby="reqSuccessful"
+         style="z-index: 1400" data-toggle="modal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fa fa-window-close-o"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="swal-icon swal-icon--success">
+                        <span class="swal-icon--success__line swal-icon--success__line--long"></span>
+                        <span class="swal-icon--success__line swal-icon--success__line--tip"></span>
+                        <div class="swal-icon--success__ring"></div>
+                        <div class="swal-icon--success__hide-corners"></div>
+                    </div>
+                    <div class="text-center">
+                        <span class="fs-20 font-weight-bold">
+                            Đặt hàng thành công
+                        </span>
+                    </div>
+                    <div class="text-center pt-3">
+                        <span class="fs-14">
+                            Hãy chọn và đặt thêm món để tích điểm nhiều hơn nhé
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="/product/categories/1" type="button" class="btn btn-primary">
+                        <i class="fa fa-arrow-circle-left pr-1"></i>
+                        Tiếp tục mua hàng
+                    </a>
+                    <a href="/order" type="button" class="btn btn-success">Xem đơn hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-cart flex-col-l p-l-40 p-r-25">
+        <div class="header-cart-title flex-w flex-sb-m">
+            <span class="cl2" style="font-weight: bold; font-size: 25px">Giỏ hàng</span>
+
+            <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+                <i class="zmdi zmdi-close"></i>
+            </div>
+        </div>
+
+        <div class="header-cart-content flex-w js-pscroll w-full">
+            <ul id="list-cart" class="header-cart-wrapitem"></ul>
+        </div>
+
+        <span><i class="text-primary" style="font-size: 12px">(*) Bấm vào hình ảnh để hủy bỏ mặt hàng đã chọn</i></span>
+
+        <div class="w-full">
+            <div class="w-full p-t-5 voucherForm">
+                <button class="flex-c-m cl2 size-111 bg8 bor4 hov-btn3 p-lr-15 trans-04" data-toggle="modal"
+                        data-target="#reqLogin">
+                    CHỌN VOUCHER
+                </button>
+            </div>
+            <div class="w-full p-tb-5">
+                Tổng cộng:
+                <span class="float-right" id="total-cost"></span>
+            </div>
+            <div class="header-cart-buttons flex-w w-full m-b--20">
+                <button th:if="${#request.userPrincipal != null && #authentication.principal.phoneNumber != null
+                && #authentication.principal.address != null}"
+                        class="flex-c-m cl0 size-111 bg3 bor4 hov-btn3 p-lr-15 trans-04"
+                        data-toggle="modal" data-target="#verifyAddress">
+                    ĐẶT HÀNG
+                </button>
+                <button th:if="${#request.userPrincipal != null && #authentication.principal.phoneNumber == null
+                && #authentication.principal.address == null}"
+                        class="flex-c-m cl0 size-111 bg3 bor4 hov-btn3 p-lr-15 trans-04"
+                        data-toggle="modal" data-target="#reqUpdateProfile">
+                    ĐẶT HÀNG
+                </button>
+                <button th:if="${#request.userPrincipal == null}"
+                        class="flex-c-m cl0 size-111 bg3 bor4 hov-btn3 p-lr-15 trans-04" data-toggle="modal"
+                        data-target="#reqLogin">
+                    ĐẶT HÀNG
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

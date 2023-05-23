@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<!-- Modal đăng ký tài khoản -->
+<div class="wrap-modal1 js-modal1 p-tb-20" th:fragment="fm-register">
+    <div class="overlay-modal1"></div>
+    <div class="container">
+        <div class="bg0 p-t-20 p-lr-15-lg how-pos3-parent">
+            <button class="how-pos3 hov3 trans-04 js-hide-modal1 p-t-40">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/OOjs_UI_icon_close.svg/1200px-OOjs_UI_icon_close.svg.png"
+                     alt="CLOSE" width="35"
+                     height="35">
+            </button>
+            <h1 class="txt-center">Đăng ký tài khoản</h1>
+            <form id="form-register">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 p-tb-30">
+                        <div class="p-lr-300 p-lr-0-lg">
+                            <div class="form-group">
+                                <div class="bor8 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="text"
+                                           id="ho-va-ten" name="ho-va-ten" placeholder="Nhập họ và tên">
+                                    <span class="how-pos4 pointer-none lnr lnr-text-format"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="how-pos4-parent p-b-20">
+                                    <label>Giới tính</label>
+
+                                    <label class="how-pos4 m-t-3" for="male">Nam</label>
+                                    <input class="gender" type="radio" id="male" name="gender" value="1">
+
+                                    <label class="how-pos4 m-t-3 m-l-80" for="female">Nữ</label>
+                                    <input class="gender m-t--13 m-l-80" type="radio" id="female" name="gender"
+                                           value="0">
+
+                                    <div class="bor19 how-pos4-parent float-right m-t--42"
+                                         style="width: 62%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                        <label for="birthday" style="height: 14px">Ngày sinh</label>
+                                        <input class="cl2 plh3 p-lr-18 form-control"
+                                               style="height: 27px;" type="date" id="birthday" name="birthday">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="bor8 how-pos4-parent m-t-10">
+                                    <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="text" id="dia-chi"
+                                           name="dia-chi" placeholder="Nhập địa chỉ">
+                                    <span class="how-pos4 pointer-none lnr lnr-map-marker"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="bor8 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="password"
+                                           id="new-password" name="new-password" placeholder="Nhập mật khẩu">
+                                    <span class="how-pos4 pointer-none lnr lnr-lock"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="bor8 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="password"
+                                           id="re-password" name="re-password" placeholder="Nhập lại mật khẩu">
+                                    <span class="how-pos4 pointer-none lnr lnr-sync"></span>
+                                </div>
+                            </div>
+
+                            <div class="how-pos4-parent p-b-20">
+                                <input type="checkbox" id="chk-show-hide-pass">
+                                <label for="chk-show-hide-pass" class="how-pos4 m-t--13">Hiển thị mật khẩu</label>
+                            </div>
+
+                            <div class="m-b-20">
+									<span style="font-size: small; color: royalblue;">
+										<i>(*) Lưu ý: Các thông tin có liên quan đến việc giao món tận nơi.
+                                            Xin vui lòng ghi cụ thể và chính xác</i>
+									</span>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="flex-c-m cl0 size-125  bg3 bor1 hov-btn3 trans-04 pointer">
+                                    Đăng ký
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal xác thực OTP -->
+<div class="modal fade p-t-200" id="verifyOTPModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     style="z-index: 1400" data-toggle="modal" aria-hidden="true" th:fragment="fm-verifyOTP">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Đăng ký tài khoản</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-sent-otp">
+                    <div class="bor8 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="text" id="phone"
+                               name="phone" placeholder="Nhập số điện thoại. VD: 091234XXXX" required>
+                        <i class="how-pos4 pointer-none lnr lnr-phone-handset"></i>
+                    </div>
+                    <div class="m-b-20">
+                                <span id="regex-phone"
+                                      style="font-size: small; color: red; font-style: italic"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-center m-b-20">
+                        <button id="send-otp" class="flex-c-m cl0 size-125  bg3 bor1 hov-btn3 trans-04 pointer">
+                            Gửi mã
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-verify-otp">
+                    <div class="bor8 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="text" id="otp"
+                               name="otp" placeholder="Nhập mã OTP tại đây" required>
+                        <i class="how-pos4 pointer-none zmdi zmdi-code-smartphone"></i>
+                    </div>
+                    <div class="m-b-5">
+                        <span>Chưa nhận được mã?</span>
+                        <a style="font-style: italic; cursor: pointer; color: blue">
+                            <u id="resend-otp">Gửi lại mã</u>
+                        </a>
+                    </div>
+                    <div class="m-b-20">
+                                <span id="regex-phone-verify"
+                                      style="font-size: small; color: red; font-style: italic"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button id="verify-otp"
+                                class="flex-c-m cl0 size-125  bg3 bor1 hov-btn3 trans-04 pointer">
+                            Xác thực
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal yêu cầu đăng nhập hoặc đăng ký tài khoản -->
+<div class="modal fade p-t-200" id="reqLogin" tabindex="-1" role="dialog" th:fragment="fm-reqLogin"
+     aria-labelledby="exampleModalLabel"
+     style="z-index: 1400" data-toggle="modal" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bạn sắp trở thành Khách hàng VIP của P&T rồi đấy <br>
+                    <i class="lnr lnr-star"></i>
+                    <i class="lnr lnr-star"></i>
+                    <i class="lnr lnr-star"></i>
+                    <i class="lnr lnr-star-half"></i>
+                    <i class="lnr lnr-star-empty"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Hãy đăng nhập hoặc đăng ký tài khoản để nhận ngay <br> PHIẾU GIẢM GIÁ <i
+                    class="lnr lnr-gift"></i>
+                Khuyến mãi đang chờ đợi bạn <i class="lnr lnr-smile"></i>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-sm" data-dismiss="modal"
+                   style="color: #533f03; font-size: 15px" data-toggle="modal" data-target="#verifyOTPModal">
+                    Đăng ký tài khoản
+                </a>
+                hoặc
+                <a href="/login" type="button" class="btn btn-sm" style="color: blue; font-size: 15px">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

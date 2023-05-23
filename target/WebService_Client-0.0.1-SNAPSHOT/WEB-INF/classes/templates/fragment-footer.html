@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+<!-- Footer -->
+<footer class="bg3 p-t-75 p-b-32" th:fragment="fm-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Thực đơn
+                </h4>
+
+                <ul>
+                    <li class="p-b-10" th:each="data, value: ${loaiMatHang}">
+                        <a href="#" class="fs-13 cl7 hov-cl1 trans-04" th:text="${data.tenLMH}"
+                           th:href="@{/product/categories/{categories}(categories=${data.maLMH})}"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    Chi nhánh
+                </h4>
+
+                <ul>
+                    <li class="p-b-10">
+                        <a href="https://goo.gl/maps/mvbxaq3hyqd7L9Co9" target="_blank" rel="noopener noreferrer"
+                           class="cl7 hov-cl1 trans-04"
+                           style="font-size: 13px">
+                            Gò Vấp
+                        </a>
+                    </li>
+
+                    <li class="p-b-10">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="cl7 hov-cl1 trans-04"
+                           style="font-size: 13px">
+                            Bình Chánh
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    LIÊN HỆ
+                </h4>
+
+                <div>
+                    <a href="https://www.facebook.com/minhtan04/" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/tanatran04/" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"
+                       target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+
+                    <a href="mailto: tanlun04112000@gmail.com" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                        <i class="zmdi zmdi-email"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <h4 class="stext-301 cl0 p-b-30">
+                    HOTLINE
+                </h4>
+
+                <ul>
+                    <li class="p-b-10">
+                        <a href="tel:+84938306459" target="_blank" rel="noopener noreferrer"
+                           class="stext-107 cl7 hov-cl1 trans-04">
+                            <i class="fa fa-phone"></i>
+                            &nbsp;+84&nbsp;938 306 459
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="p-t-40">
+            <p class="cl6 txt-center" style="font-size: 13px">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Quán ăn vặt T & T TP.HCM | 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, Thành phố Hồ Chí Minh
+
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn" th:fragment="fm-backtotop">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+</div>
+
+<div th:fragment="fm-script">
+    <!--===============================================================================================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../vendor/bootstrap/js/popper.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../vendor/slick/slick.min.js"></script>
+    <script src="../../js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../vendor/isotope/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../vendor/sweetalert/sweetalert.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../js/main.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../js/url-declare.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.21/dataRender/datetime.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.2.2/js/dataTables.fixedHeader.min.js"></script>
+
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+
+    <script src="https://cdn.datatables.net/searchpanes/2.0.0/js/dataTables.searchPanes.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+
+    <script src="https://cdn.datatables.net/fixedcolumns/4.0.2/js/dataTables.fixedColumns.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../js/register.js"></script>
+    <!--===============================================================================================-->
+    <script src="../../js/cart-crud.js"></script>
+</div>
+
+</body>
+</html>

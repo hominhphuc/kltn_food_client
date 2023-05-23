@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment-header :: fm-head"></head>
+
+<head>
+    <title>Đăng nhập</title>
+</head>
+
+<body class="animsition"
+      style="background: url(https://images.unsplash.com/photo-1600456899121-68eda5705257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80)">
+
+<header th:replace="fragment-header :: fm-header"></header>
+<div th:replace="fragment-cart :: fm-cart"></div>
+
+<!-- Content page -->
+<section class="bg0 p-t-50"
+         style="background: url(https://images.unsplash.com/photo-1600456899121-68eda5705257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80)">
+    <div class="container p-lr-50">
+        <div class="flex-w flex-tr" style="background-color: #d39e00">
+            <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md"
+                 style="background-image:  url('https://cdn.alongwalker.co/vn/wp-content/uploads/2022/02/22114703/image-danh-sach-5-quan-an-vat-ngon-nhat-tai-long-khanh-164548002323594.jpg?fbclid=IwAR0eXqL5uVjpYLl9jWZlgHUsxCWcNMIYp8n5HKBdkT8nMQoDzfLYlYshKj4');
+                                            background-repeat: no-repeat">
+            </div>
+            <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+                <form name='f' th:action="@{/j_spring_security_check}" method='POST'>
+                    <h1 class="cl2 p-b-30"><b>Đăng nhập</b></h1>
+                    <h6 class="cl2 p-t-10 p-b-50">
+                        Xin chào quý khách!
+                        <br><br> Đăng ký thành viên để nhận ngay Voucher Khủng <i class="fa fa-gift"></i>
+                        <br><br> Đăng nhập để tích lũy điểm <br> đổi ngay Voucher theo Cấp độ <i
+                            class="fa fa-diamond"></i>
+                    </h6>
+
+                    <div th:if="${#request.getParameter('error') == 'true'}" class="input-group mb-3">
+                        <div class="alert alert-danger fa fa-exclamation-circle" style="width: 100%; font-size: 13px">
+                            Tài khoản hoặc mật khẩu không hợp lệ
+                        </div>
+                    </div>
+
+                    <div class="bor8 m-b-20 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30" type="text" id="phone-login"
+                               name="username" placeholder="Nhập số điện thoại của quý khách" value="0325356778">
+                        <span class="how-pos4 pointer-none lnr lnr-phone-handset"></span>
+                    </div>
+
+                    <div class="bor8 m-b-20 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30" type="password" id="password-login"
+                               name="password" placeholder="Nhập mật khẩu" value="1234">
+                        <span class="how-pos4 pointer-none lnr lnr-lock"></span>
+                    </div>
+
+                    <div class="size-200 p-t-2 p-b-24">
+                        <span class="mtext-10 cl2" style="color: #002752;">
+                            <u><a href="#" data-toggle="modal" data-target="#verifyOTPModal">Đăng ký thành viên</a></u>
+                        </span>
+                        <span class="mtext-10 cl2" style="float: right; color: #002752">
+                            <u><a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Quên mật khẩu?</a></u>
+                        </span>
+                    </div>
+
+                    <button type="submit" class="flex-c-m cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                        Đăng nhập
+                    </button>
+                </form>
+
+                <div class="pt-3">
+                    <a th:href="@{/oauth2/authorization/google}"
+                       class="flex-c-m cl3 size-121 bg0 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                        <img src="https://freesvg.org/img/1534129544.png" alt="Google+" width="25" height="25">
+                        <span class="pl-3">Đăng nhập với Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal quên mật khẩu -->
+<div class="modal fade p-t-200" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     style="z-index: 1400" data-toggle="modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Khôi phục mật khẩu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-send-otp-fp">
+                    <div class="bor8 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="text" id="phone-fp"
+                               name="phone-fp" placeholder="Nhập số điện thoại" required>
+                        <i class="how-pos4 pointer-none lnr lnr-phone-handset"></i>
+                    </div>
+
+                    <div class="m-b-20">
+                        <span id="regex-phone-fp" style="font-size: small; color: red; font-style: italic"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-center m-b-20">
+                        <button id="send-otp-fp"
+                                class="flex-c-m cl0 size-125  bg3 bor1 hov-btn3 trans-04 pointer">
+                            Gửi mã
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-verify-otp-fp">
+                    <div class="bor8 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="text" id="otp-fp"
+                               name="otp-fp" placeholder="Nhập mã OTP tại đây" required>
+                        <i class="how-pos4 pointer-none zmdi zmdi-code-smartphone"></i>
+                    </div>
+                    <div class="m-b-5">
+                        <span>Chưa nhận được mã?</span>
+                        <a style="font-style: italic; cursor: pointer; color: blue">
+                            <u id="resend-otp-fp">Gửi lại mã</u>
+                        </a>
+                    </div>
+                    <div class="m-b-20">
+                        <span id="regex-phone-verify-fp" style="font-size: small; color: red; font-style: italic"></span>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button id="verify-otp-fp"
+                                class="flex-c-m cl0 size-125  bg3 bor1 hov-btn3 trans-04 pointer">
+                            Xác thực
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal thiết lập mật khẩu mới -->
+<div class="modal fade p-t-200" id="resetPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     style="z-index: 1400" data-toggle="modal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Đặt mật khẩu mới</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="bor8 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="password"
+                               id="new-password-fp"
+                               name="new-password-fp" placeholder="Nhập mật khẩu mới" required>
+                        <span class="how-pos4 pointer-none lnr lnr-lock"></span>
+                    </div>
+                    <div class="m-b-20">
+                                <span id="regex-new-password"
+                                      style="font-size: small; color: red; font-style: italic"></span>
+                    </div>
+
+                    <div class="bor8 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="password"
+                               id="re-password-fp"
+                               name="re-password-fp" placeholder="Nhập lại mật khẩu mới" required>
+                        <span class="how-pos4 pointer-none lnr lnr-sync"></span>
+                    </div>
+                    <div class="m-b-20">
+                                <span id="regex-repassword-fp"
+                                      style="font-size: small; color: red; font-style: italic"></span>
+                    </div>
+
+                    <div class="how-pos4-parent p-b-20">
+                        <input type="checkbox" id="chk-show-hide-pass-fp">
+                        <span class="how-pos4 m-t--13">Hiển thị mật khẩu</span>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button id="fp-btn"
+                                class="flex-c-m cl0 size-125  bg3 bor1 hov-btn3 trans-04 pointer">
+                            Xác nhận
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragment-register :: fm-verifyOTP"></div>
+<div th:replace="fragment-register :: fm-register"></div>
+
+<!--===============================================================================================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/slick/slick.min.js"></script>
+<script src="js/slick-custom.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/sweetalert/sweetalert.min.js"></script>
+<!--===============================================================================================-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<!--===============================================================================================-->
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+<!--===============================================================================================-->
+<script src="js/url-declare.js"></script>
+<!--===============================================================================================-->
+<script src="js/register.js"></script>
+<!--===============================================================================================-->
+<script src="js/forgot-pass.js"></script>
+<!--===============================================================================================-->
+<script th:if="${#request.userPrincipal != null}">
+    $(function () {
+        $('.cartFrame').hide()
+        window.location.href = '/'
+    })
+</script>
+<script>
+    $(function () {
+        $('.cartFrame').hide()
+    })
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+<div class="modal fade p-t-200" id="verifyAddress" tabindex="-1" role="dialog" aria-labelledby="reqSuccessful"
+     style="z-index: 1400" data-toggle="modal" aria-hidden="true"
+     th:fragment="fm-checkout-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-window-close-o"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                        <span class="fs-20 font-weight-bold">
+                            Quý khách sử dụng địa chỉ này để đặt hàng?
+                        </span>
+                </div>
+                <div class="text-center pt-3">
+                    <div class="bor8 how-pos4-parent">
+                        <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="text"
+                               placeholder="Nhập địa chỉ giao hàng"
+                               id="dia-chi-checkout" name="dia-chi-checkout" required>
+                        <span class="how-pos4 pointer-none fa fa-street-view"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="dat-hang-btn"
+                        class="flex-c-m cl0 size-125 bg3 bor1 hov-btn3 trans-04 pointer" style="border-radius: 6px">
+                    Xác nhận đặt hàng
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

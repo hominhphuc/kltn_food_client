@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment-header :: fm-head"></head>
+
+<head><title>Trang chủ</title></head>
+
+<body class="animsition">
+
+<header th:replace="fragment-header :: fm-header"></header>
+<div th:replace="fragment-register :: fm-verifyOTP"></div>
+<div th:replace="fragment-register :: fm-register"></div>
+<div th:replace="fragment-requestUpdateProfile :: fm-reqUpdateProfile"></div>
+<div th:replace="fragment-register :: fm-reqLogin"></div>
+<div th:replace="fragment-cart :: fm-cart"></div>
+<div th:replace="fragment-voucher :: fm-voucher"></div>
+<div th:replace="fragment-checkout :: fm-checkout-modal"></div>
+
+<!-- Slider -->
+<section class="section-slide">
+    <div class="wrap-slick1 rs2-slick1">
+        <div class="slick1">
+            <div class="item-slick1 bg-overlay1" th:each="res, value: ${intro}"
+                 th:style="'background-image: url(' + @{${res.hinhAnh}} + '); background-size: 100% 100%'"
+                 th:attr="data-thumb=${res.hinhAnh}, data-caption=${res.ten}">
+                <div class="container h-full">
+                    <div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
+                        <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
+								<span class="txt-center cl0 respon2" style="font-size: 30px;">
+									[[${res.tieuDe}]]
+								</span>
+                        </div>
+
+                        <div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn"
+                             data-delay="800">
+                            <h2 class="txt-center cl0 p-t-22 p-b-40 respon1" style="font-size: 60px; font-weight: bold">
+                                [[${res.noiDung}]]
+                            </h2>
+                        </div>
+
+                        <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
+                            <a href="/product/categories/8"
+                               class="flex-c-m fs-15 font-weight-bold cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+                                VÀO THỰC ĐƠN NGAY
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Banner -->
+<div class="sec-banner bg0">
+    <div class="flex-w flex-c-m">
+        <div class="size-202 m-lr-auto respon4">
+            <!-- Block1 -->
+            <div class="block1 wrap-pic-w">
+                <img src="https://firebasestorage.googleapis.com/v0/b/foodshop-3ee3e.appspot.com/o/mon-mi-y-thit-bo-bam.jpg?alt=media&token=1353904f-92cf-42e6-96e5-36657633797d"
+                     alt="IMG-BANNER" style="height: 300px">
+
+                <a href="/product/categories/2"
+                   class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                    <div class="block1-txt-child1 flex-col-l">
+                        <span class="block1-name fs-28 font-weight-bold trans-04 p-b-8">Mì Mong Manh</span>
+
+                        <span class="block1-info fs-14 trans-04">
+                            Mì xào, Mì Ý, Mì gì cũng có<br>Mì ý vừa ngon mà vừa rẻ? Việc gì không ăn thử
+                        </span>
+                    </div>
+
+                    <div class="block1-txt-child2 p-b-4 trans-05">
+                        <div class="block1-link fs-15 cl0 trans-09">
+                            XEM NGAY
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="size-202 m-lr-auto respon4">
+            <!-- Block1 -->
+            <div class="block1 wrap-pic-w">
+                <img src="https://firebasestorage.googleapis.com/v0/b/foodshop-3ee3e.appspot.com/o/tra-sua-dai-loan.jpg?alt=media&token=35ad09e4-0d27-411f-935f-aebc94bf75a9"
+                     alt="IMG-BANNER" style="height: 300px">
+
+                <a href="/product/categories/3"
+                   class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                    <div class="block1-txt-child1 flex-col-l">
+                        <span class="block1-name fs-28 font-weight-bold trans-04 p-b-8">Giải khát</span>
+
+                        <span class="block1-info fs-14 trans-04">Bạn thèm trà sữa hả?<br>Đừng lo đã có trà sữa để giải khát cơn nghiện</span>
+                    </div>
+
+                    <div class="block1-txt-child2 p-b-4 trans-05">
+                        <div class="block1-link fs-15 cl0 trans-09">
+                            XEM NGAY
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="size-202 m-lr-auto respon4">
+            <!-- Block1 -->
+            <div class="block1 wrap-pic-w">
+                <img src="https://firebasestorage.googleapis.com/v0/b/foodshop-3ee3e.appspot.com/o/combo-3buoc.png?alt=media&token=4c4f4163-ac82-47c3-8477-e6ffc93909ad"
+                     alt="IMG-BANNER" style="height: 300px">
+
+                <a href="/product/categories/8"
+                   class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+                    <div class="block1-txt-child1 flex-col-l">
+                        <span class="block1-name fs-28 font-weight-bold trans-04 p-b-8">Combo Ăn nhiều - Gà rán, khoai tây chiên, nước ngọt</span>
+
+                        <span class="block1-info fs-14 trans-04">
+                            Nhiều món ngon quá<br>Không biết chọn món nào
+                            <br>Đã có combo giải quyết<br>Chọn combo ngay !!
+                        </span>
+                    </div>
+
+                    <div class="block1-txt-child2 p-b-4 trans-05">
+                        <div class="block1-link fs-15 cl0 trans-09">
+                            XEM NGAY
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Overview -->
+<section class="sec-product bg0 p-t-100 p-b-50 p-lr-50">
+    <div class="container">
+        <div class="p-b-32">
+            <h3 id="overview" class="cl5 txt-center respon1 font-weight-bold fs-50" style="font-family: system-ui">
+                TỔNG QUAN
+            </h3>
+        </div>
+
+        <!-- Tab01 -->
+        <div class="tab01">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item p-b-10">
+                    <a class="nav-link active" data-toggle="tab" href="#best-seller" role="tab">Bán chạy</a>
+                </li>
+
+                <li class="nav-item p-b-10">
+                    <a class="nav-link" data-toggle="tab" href="#featured" role="tab">Đặc trưng</a>
+                </li>
+
+                <li class="nav-item p-b-10">
+                    <a class="nav-link" data-toggle="tab" href="#top-rate" role="tab">Mới</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content p-t-50">
+                <!-- - -->
+                <div class="tab-pane fade show active" id="best-seller" role="tabpanel">
+                    <!-- Slide2 -->
+                    <div class="wrap-slick2">
+                        <div class="slick2">
+                            <div class="col-md-4 p-b-30" th:each="res, value: ${topSeller}">
+                                <!-- Block1 -->
+                                <div class="block1 wrap-pic-w hov-img0 bor4"
+                                     style="background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <img th:src="@{${res.hinhAnh}}"
+                                         alt="IMG-BANNER" height="200">
+
+                                    <div class="block1-txt-child1 flex-col-l p-l-10 p-t-25 p-b-100">
+                                        <h5 class="trans-04 font-weight-bold p-r-10" style="position: absolute"
+                                            th:text="${res.tenMH}"></h5>
+                                        <div>
+                                            <a tabindex="0" style="cursor: pointer" data-trigger="focus"
+                                               data-toggle="popover" title="Mô tả mặt hàng"
+                                               th:attr="data-content=${res.moTa}">
+                                                <span class="block1-info trans-04 p-t-50 p-r-10"
+                                                      style="position: absolute"
+                                                      th:text="${#strings.length(res.moTa) > 50 ? #strings.substring(res.moTa, 0, 50) + ' ...Xem thêm' : res.moTa}"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="mtext-109 trans-04 p-t-4 p-r-10 text-success txt-right"
+                                         th:text="${#numbers.formatDecimal(res.donGia, 0, 'COMMA', 0, 'POINT') + ' VND'}"></div>
+
+                                    <div th:onclick="addToCart([[${res.maMH}]])"
+                                         class="flex-c-m cl6 size-105 bg2 bor4 pointer hov-btn1 trans-04 m-tb-10 m-lr-10">
+                                        <i class="icon-search cl2 m-r-6 fs-15 trans-04 lnr lnr-cart"></i>
+                                        Thêm vào giỏ hàng
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- - -->
+                <div class="tab-pane fade" id="featured" role="tabpanel">
+                    <!-- Slide2 -->
+                    <div class="wrap-slick2">
+                        <div class="slick2">
+                            <div class="col-md-4 p-b-30" th:each="res, value: ${features}">
+                                <!-- Block1 -->
+                                <div class="block1 wrap-pic-w hov-img0 bor4"
+                                     style="background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <img th:src="@{${res.hinhAnh}}"
+                                         alt="IMG-BANNER" height="200">
+
+                                    <div class="block1-txt-child1 flex-col-l p-l-10 p-t-25 p-b-100">
+                                        <h5 class="trans-04 font-weight-bold p-r-10" style="position: absolute"
+                                            th:text="${res.tenMH}"></h5>
+                                        <div>
+                                            <a tabindex="0" style="cursor: pointer" data-trigger="focus"
+                                               data-toggle="popover" title="Mô tả"
+                                               th:attr="data-content=${res.moTa}">
+                                                <span class="block1-info trans-04 p-t-50 p-r-10"
+                                                      style="position: absolute"
+                                                      th:text="${#strings.length(res.moTa) > 50 ? #strings.substring(res.moTa, 0, 50) + ' ...Xem thêm' : res.moTa}"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="mtext-109 trans-04 p-t-4 p-r-10 text-success txt-right"
+                                         th:text="${#numbers.formatDecimal(res.donGia, 0, 'COMMA', 0, 'POINT') + ' VND'}"></div>
+
+                                    <div th:onclick="addToCart([[${res.maMH}]])"
+                                         class="flex-c-m cl6 size-105 bg2 bor4 pointer hov-btn1 trans-04 m-tb-10 m-lr-10">
+                                        <i class="icon-search cl2 m-r-6 fs-15 trans-04 lnr lnr-cart"></i>
+                                        Thêm vào giỏ hàng
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- - -->
+                <div class="tab-pane fade" id="top-rate" role="tabpanel">
+                    <!-- Slide2 -->
+                    <div class="wrap-slick2">
+                        <div class="slick2">
+                            <div class="col-md-4 p-b-30" th:each="res, value: ${matHangNew}">
+                                <!-- Block1 -->
+                                <div class="block1 wrap-pic-w hov-img0 bor4"
+                                     style="background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <img th:src="@{${res.hinhAnh}}"
+                                         alt="IMG-BANNER" height="200">
+
+                                    <div class="block1-txt-child1 flex-col-l p-l-10 p-t-25 p-b-100">
+                                        <h5 class="trans-04 font-weight-bold p-r-10" style="position: absolute"
+                                            th:text="${res.tenMH}"></h5>
+                                        <div>
+                                            <a tabindex="0" style="cursor: pointer" data-trigger="focus"
+                                               data-toggle="popover" title="Mô tả mặt hàng"
+                                               th:attr="data-content=${res.moTa}">
+                                                <span class="block1-info trans-04 p-t-50 p-r-10"
+                                                      style="position: absolute"
+                                                      th:text="${#strings.length(res.moTa) > 50 ? #strings.substring(res.moTa, 0, 50) + ' ...Xem thêm' : res.moTa}"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="mtext-109 trans-04 p-t-4 p-r-10 text-success txt-right"
+                                         th:text="${#numbers.formatDecimal(res.donGia, 0, 'COMMA', 0, 'POINT') + ' VND'}"></div>
+
+                                    <div th:onclick="addToCart([[${res.maMH}]])"
+                                         class="flex-c-m cl6 size-105 bg2 bor4 pointer hov-btn1 trans-04 m-tb-10 m-lr-10">
+                                        <i class="icon-search cl2 m-r-6 fs-15 trans-04 lnr lnr-cart"></i>
+                                        Thêm vào giỏ hàng
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- More rewarding -->
+<section class="sec-blog bg0 p-t-60 p-b-90">
+    <div class="container">
+        <div class="p-b-66">
+            <h3 class="cl5 txt-center respon1 font-weight-bold fs-50" style="font-family: system-ui">
+                3 BƯỚC NHẬN NGAY VOUCHER
+            </h3>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 p-b-40">
+                <div class="blog-item">
+                    <div class="hov-img0">
+                        <a href="#overview">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/foodshop-3ee3e.appspot.com/o/Hinh-anh-an-sang-sai-gon-ngon-nhuc-nach-kem-dia-chi-va-muc-gia22_1625018299.jpg?alt=media&token=84fc00ad-697c-48b7-9f3c-cca56355dc42"
+                                 alt="IMG-REWARD">
+                        </a>
+                    </div>
+                    <div class="p-t-15">
+                        <h4 class="p-b-12">
+                            <a href="#overview" class="fs-18 cl2 hov-cl1 trans-04 font-weight-bold">
+                                Bước 1: Chọn và Đặt món
+                            </a>
+                        </h4>
+
+                        <p class="fs-14 cl6">
+                            Quý khách có thể chọn món bằng cách bấm "Thêm vào giỏ hàng"
+                            ở phần <a href="#overview">Tổng Quan</a> của trang chính
+                            hoặc bên trang <a href="/product/categories/1">Thực đơn</a>.
+                            <br><br>
+                            Sau đó bấm "Đặt hàng" trong <i style="color: purple" class="pointer js-show-cart">Giỏ
+                            hàng</i>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 p-b-40">
+                <div class="blog-item">
+                    <div class="hov-img0">
+                        <a href="#">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/foodshop-3ee3e.appspot.com/o/tich-diem-2.jpg?alt=media&token=77716129-d1a4-45c0-b53e-10da2ba8d1ff"
+                                 alt="IMG-REWARD">
+                        </a>
+                    </div>
+                    <div class="p-t-15">
+                        <h4 class="p-b-12">
+                            <a href="#" class="fs-18 cl2 hov-cl1 trans-04 font-weight-bold">
+                                Bước 2: Lấy điểm
+                            </a>
+                        </h4>
+
+                        <p class="fs-14 cl6">
+                            Sau khi thanh toán hóa đơn. Quý khách sẽ nhận được điểm tích lũy tương ứng
+                            với số tiền trong hóa đơn.
+                            <br><br>
+                            Mỗi 10.000 VNĐ tương ứng với 1 điểm tích lũy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 p-b-40">
+                <div class="blog-item">
+                    <div class="hov-img0">
+                        <a href="#">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/foodshop-3ee3e.appspot.com/o/discount_voucher.jpg?alt=media&token=2f3680e6-e7e5-4c0e-8ee2-59c7de8348a9"
+                                 alt="IMG-REWARD">
+                        </a>
+                    </div>
+                    <div class="p-t-15">
+                        <h4 class="p-b-12">
+                            <a href="#" class="fs-18 cl2 hov-cl1 trans-04 font-weight-bold">
+                                Bước 3: Quy đổi điểm nhận Voucher
+                            </a>
+                        </h4>
+
+                        <p class="fs-14 cl6">
+                            Sử dụng điểm tích lũy Quý khách đang có, sẽ đổi được voucher với các mốc tương ứng
+                            trong <i th:if="${#request.userPrincipal == null}" class="pointer" style="color: purple"
+                                     data-toggle="modal" data-target="#reqLogin">Kho Voucher.</i>
+                            <i th:if="${#request.userPrincipal != null}" class="pointer js-show-modal-voucher"
+                               style="color: purple">Kho Voucher.</i>
+                            <br><br>
+                            Đối với khách hàng mới
+                            <i th:if="${#request.userPrincipal == null}" style="color: purple" class="pointer"
+                                                      data-toggle="modal" data-target="#verifyOTPModal">
+                                Đăng ký thành viên</i>
+                            <i th:if="${#request.userPrincipal != null}" style="color: purple" class="pointer">
+                                Đăng ký thành viên</i>
+                            , sẽ được nhận voucher cho người mới
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="fragment-footer :: fm-backtotop"></div>
+<footer th:replace="fragment-footer :: fm-footer"></footer>
+<div th:replace="fragment-footer :: fm-script"></div>
+
+</body>
+
+</html>

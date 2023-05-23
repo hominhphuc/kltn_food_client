@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragment-header :: fm-head"></head>
+
+<head>
+    <title>Thông tin cá nhân</title>
+
+    <!-- CSS Upload Image -->
+    <link rel="stylesheet" href="css/uploadImage.css">
+</head>
+
+<body class="animsition">
+
+<header th:replace="fragment-header :: fm-header"></header>
+
+<!-- Content page -->
+<section class="bg0 p-t-52 p-b-20">
+    <div class="container">
+        <div class="bg0 p-b-30 p-lr-15-lg how-pos3-parent">
+            <h1 class="txt-center cl2 mtext-113 p-l-28">
+                Thông tin cá nhân
+                &nbsp;<button class="btn bg-none" id="edit" onclick="hienChinhSua()" style="color: black"><i
+                    class="lnr lnr-pencil"></i></button>
+                &nbsp;<button class="btn bg-none" id="cancel"
+                              onclick="cancelChinhSua()" style="color: black"><i class="lnr lnr-cross"></i></button>
+            </h1>
+            <h6 class="txt-center">
+                <a href="#" class="js-show-modal-change-password">
+                    <i class="zmdi zmdi-lock p-r-10"></i>
+                    <span>Đổi mật khẩu</span>
+                </a>
+            </h6>
+            <form id="profile-update">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 m-t-60 m-b--100">
+                        <div class="p-lr-30 p-lr-0-lg">
+                            <div class="text-center p-b-32 m-t--38 m-l-10 level-system"></div>
+                            <div class="profile-pic-div">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1040/1040241.png"
+                                     class="img-circle elevation-2" alt="User Image" id="image-upload-firebase">
+                                <input type="file" id="file-upload-firebase">
+                                <label for="file-upload-firebase" id="image-upload-btn">Chọn hình ảnh</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 p-t-50">
+                        <div class="p-lr-30 p-lr-0-lg">
+
+                            <div class="form-group m-b-20">
+                                <label for="hovaten-u"><b>1. Họ và tên</b></label>
+                                <div class="bor19 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-lr-18 form-control" type="text" name="hovaten"
+                                           id="hovaten-u"
+                                           placeholder="Nhập họ và tên">
+                                </div>
+                            </div>
+
+                            <div class="form-group p-b-20">
+                                <div class="how-pos4-parent">
+                                    <label><b>2. Giới tính</b></label>
+
+                                    <label class="how-pos4 m-t-13" for="male">Nam</label>
+                                    <input class="gender" type="radio" id="male" name="gender" value="1">
+
+                                    <label class="how-pos4 m-t-13 m-l-80" for="female">Nữ</label>
+                                    <input class="m-t--13 m-l-80 gender" type="radio" id="female" name="gender"
+                                           value="0">
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-20">
+                                <label for="birthday"><b>3. Ngày sinh</b></label>
+                                <div class="bor19 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-lr-18 form-control" type="date" id="birthday"
+                                           name="birthday">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 p-t-50">
+                        <div class="p-lr-30 p-lr-0-lg">
+
+                            <div class="form-group m-b-20">
+                                <label for="address"><b>4. Địa chỉ</b></label>
+                                <div class="bor19 how-pos4-parent">
+                                <textarea class="cl2 plh3 size-116 p-lr-18 form-control" name="address"
+                                          id="address" rows="4" cols="50"
+                                          placeholder="Nhập địa chỉ"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-20">
+                                <label for="email"><b>5. Email</b></label>
+                                <div class="bor19 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-lr-18 form-control" type="email" name="email"
+                                           id="email"
+                                           placeholder="Nhập email">
+                                </div>
+                            </div>
+
+                            <div class="form-group m-b-20">
+                                <label for="sdt"><b>6. Số điện thoại</b></label>
+                                <div class="bor19 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-lr-18 form-control" type="text" name="sdt-u"
+                                           id="sdt"
+                                           placeholder="Nhập số điện thoại" readonly>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center" id="form-btn-save"></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Modal thay đổi mật khẩu -->
+<div class="wrap-modal1 js-modal-change-password p-t-150 p-b-20">
+    <div class="overlay-modal1 js-hide-modal-change-password"></div>
+    <div class="container">
+        <div class="bg0 p-t-20 p-lr-15-lg how-pos3-parent">
+            <button class="how-pos3 hov3 trans-04 js-hide-modal-change-password p-t-40">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/OOjs_UI_icon_close.svg/1200px-OOjs_UI_icon_close.svg.png"
+                     alt="CLOSE" width="35"
+                     height="35">
+            </button>
+            <h1 class="txt-center">Đổi mật khẩu</h1>
+            <form id="change-password">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 p-tb-30">
+                        <div class="p-lr-300 p-lr-0-lg">
+                            <div class="form-group">
+                                <div class="bor8 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="password"
+                                           id="old-password" name="old-password" placeholder="Nhập mật khẩu cũ">
+                                    <span class="how-pos4 pointer-none zmdi zmdi-lock-open"></span>
+                                </div>
+                                <span id="regex-old-password"
+                                      style="font-size: small; color: red; font-style: italic"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="bor8 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="password"
+                                           id="new-password" name="new-password" placeholder="Nhập mật khẩu mới">
+                                    <span class="how-pos4 pointer-none lnr lnr-lock"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="bor8 how-pos4-parent">
+                                    <input class="cl2 plh3 size-116 p-l-62 p-r-30 form-control" type="password"
+                                           id="re-password" name="re-password" placeholder="Nhập lại mật khẩu mới">
+                                    <span class="how-pos4 pointer-none lnr lnr-sync"></span>
+                                </div>
+                            </div>
+
+                            <div class="how-pos4-parent p-b-20">
+                                <input type="checkbox" id="chk-show-hide-pass">
+                                <span class="how-pos4 m-t--13">Hiển thị mật khẩu</span>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit"
+                                        class="flex-c-m cl0 size-125  bg3 bor1 hov-btn3 trans-04 pointer">
+                                    Thay đổi
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragment-footer :: fm-backtotop"></div>
+<footer th:replace="fragment-footer :: fm-footer"></footer>
+<div th:replace="fragment-footer :: fm-script"></div>
+
+<!--===============================================================================================-->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../js/app.js"></script>
+<!--===============================================================================================-->
+<script src="../../js/profile.js"></script>
+<!--===============================================================================================-->
+<script src="../../js/change-pass.js"></script>
+<!--===============================================================================================-->
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Modal danh sách phiếu giảm giá -->
+<div class="wrap-modal1 js-modal-voucher p-tb-20" th:fragment="fm-voucher">
+    <div class="overlay-modal1 js-hide-modal-voucher"></div>
+    <div class="container">
+        <div class="bg0 p-t-50 p-lr-15-lg how-pos3-parent">
+            <button class="how-pos3 hov3 trans-04 js-hide-modal-voucher p-t-40">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/OOjs_UI_icon_close.svg/1200px-OOjs_UI_icon_close.svg.png"
+                     alt="CLOSE" width="35"
+                     height="35">
+            </button>
+            <h1 class="txt-center"></h1>
+            <div class="row">
+                <!--Danh sách phiếu giảm giá khách hàng-->
+                <div class="col-md-6 col-lg-6 p-b-30">
+                    <div class="p-l-50 p-t-5 p-lr-0-lg">
+                        <h4 class="fs-24 cl2 js-name-detail p-b-14">
+                            Phiếu giảm giá đang có
+                        </h4>
+                        <table id="tbl-voucher" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên phiếu</th>
+                                <th>Giảm</th>
+                                <th>Thao tác</th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--Đổi phiếu giảm giá-->
+                <div class="col-md-6 col-lg-6 p-b-30">
+                    <div class="p-r-50 p-t-5 p-lr-0-lg">
+                        <h4 class="fs-24 cl2 js-name-detail p-b-14">
+                            Lấy phiếu giảm giá
+                        </h4>
+
+                        <div class="float-right">
+                            <span class="fs-14 cl3 p-t-23 myPoint">Điểm của tôi: ...</span>
+                        </div>
+
+                        <div class="p-t-33">
+                            <ul>
+                                <li class="flex-w flex-t p-b-30">
+                                    <div class="wrao-pic-w size-214 m-r-20">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/726/726447.png" width="90"
+                                             height="90" alt="PRODUCT">
+                                    </div>
+
+                                    <div class="size-215 flex-col-t">
+                                        <span class="fs-15 cl8 hov-cl1 trans-04">Voucher Tập Ăn</span>
+
+                                        <div class="fs-15">
+                                            <span class="cl1">Giảm 10%</span>
+                                            <button class="btn btn-success float-right btnTapAn">Đổi</button>
+                                        </div>
+
+                                        <span class="text-danger p-t-10">Tốn 200 điểm</span>
+                                    </div>
+                                </li>
+
+                                <li class="flex-w flex-t p-b-30">
+                                    <div class="wrao-pic-w size-214 m-r-20">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/411/411714.png" width="90"
+                                             height="90" alt="PRODUCT">
+                                    </div>
+
+                                    <div class="size-215 flex-col-t">
+                                        <span class="fs-15 cl8 hov-cl1 trans-04">Voucher Sành Ăn</span>
+
+                                        <div class="fs-15">
+                                            <span class="cl1">Giảm 30%</span>
+                                            <button class="btn btn-success float-right btnSanhAn">Đổi</button>
+                                        </div>
+
+                                        <span class="text-danger p-t-10">Tốn 500 điểm</span>
+                                    </div>
+                                </li>
+
+                                <li class="flex-w flex-t p-b-30">
+                                    <div class="wrao-pic-w size-214 m-r-20">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/1405/1405276.png" width="90"
+                                             height="90" alt="PRODUCT">
+                                    </div>
+
+                                    <div class="size-215 flex-col-t">
+                                        <span class="fs-15 cl8 hov-cl1 trans-04">Voucher Phàm Ăn</span>
+
+                                        <div class="fs-15">
+                                            <span class="cl1">Giảm 50%</span>
+                                            <button class="btn btn-success float-right btnPhamAn">Đổi</button>
+                                        </div>
+
+                                        <span class="text-danger p-t-10">Tốn 1000 điểm</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

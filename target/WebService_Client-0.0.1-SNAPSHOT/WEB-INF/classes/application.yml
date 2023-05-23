@@ -1,0 +1,16 @@
+twilio:
+  account_sid: AC73d8bb0a3bfd61738282aefe8271f00c
+  auth_token: af9cc3e9c3fc73773e536a218936602a
+  service_id: VAfadd84ef6402361ca9f6255e8a805e3b
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 310230438532-t839am7t32gpacb4erfn2gapd5qu7qgt.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
