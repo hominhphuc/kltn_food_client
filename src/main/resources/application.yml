@@ -1,6 +1,6 @@
 twilio:
   account_sid: AC41ad6452fad0c7b763198fe5d9a3991c
-  auth_token: ff8c8f1d5e4d02083ee43ccd9496c52f
+  auth_token: d36be209ce23d72ae18b7c65c38d59b2
   service_id: VAc145d9687366253412c71f7a9d44c532
 
 spring:
