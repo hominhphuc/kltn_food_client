@@ -15,9 +15,9 @@
             url: url_api_client + '/' + userId,
             success: function (client) {
                 $('.myPoint').text('Điểm của tôi: ' + client.diemTichLuy)
-                getVoucher($('.btnTapAn'), client, 10.0, client.diemTichLuy, 200, 'Voucher Người Cũ')
-                getVoucher($('.btnSanhAn'), client, 30.0, client.diemTichLuy, 500, 'Voucher Lễ hội')
-                getVoucher($('.btnPhamAn'), client, 50.0, client.diemTichLuy, 1000, 'Voucher dành cho khách hàng thân thiết của quán')
+                getVoucher($('.btnTapAn'), client, 10.0, client.diemTichLuy, 200, 'Voucher Tập Ăn')
+                getVoucher($('.btnSanhAn'), client, 30.0, client.diemTichLuy, 500, 'Voucher Sành Ăn')
+                getVoucher($('.btnPhamAn'), client, 50.0, client.diemTichLuy, 1000, 'Voucher Phàm Ăn')
             },
             error: function (err) {
                 alert(err)
