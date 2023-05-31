@@ -93,7 +93,7 @@
             cartCheckout = JSON.parse(storage)
         }
         if (cartCheckout.length == 0) {
-            swal('Ôi, chưa có món ăn nào trong giỏ cả T_T', 'Hãy chọn thật nhiều món để tích lũy nhiều điểm đổi quà nhé', 'warning')
+            swal('Ôi, chưa có món ăn nào trong giỏ cả P_T', 'Hãy chọn thật nhiều món để tích lũy nhiều điểm đổi quà nhé', 'warning')
             $('#verifyAddress').modal('hide')
             $('body').css('cursor', 'default')
         } else {
