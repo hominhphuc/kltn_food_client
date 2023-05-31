@@ -16,8 +16,8 @@
             success: function (client) {
                 $('.myPoint').text('Điểm của tôi: ' + client.diemTichLuy)
                 getVoucher($('.btnTapAn'), client, 10.0, client.diemTichLuy, 200, 'Voucher Tập Ăn')
-                getVoucher($('.btnSanhAn'), client, 30.0, client.diemTichLuy, 500, 'Voucher Sành Ăn')
-                getVoucher($('.btnPhamAn'), client, 50.0, client.diemTichLuy, 1000, 'Voucher Phàm Ăn')
+                getVoucher($('.btnSanhAn'), client, 30.0, client.diemTichLuy, 300, 'Voucher Sành Ăn')
+                getVoucher($('.btnPhamAn'), client, 50.0, client.diemTichLuy, 500, 'Voucher Phàm Ăn')
             },
             error: function (err) {
                 alert(err)
